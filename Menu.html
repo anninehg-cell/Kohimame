@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/menu.css" />
+
+    <!-- Montaga + Montserrat font for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montaga&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Kohi mame - meny</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div>
+          <button id="overlay-btn">
+            <img src="/Assets/ikoner/burgermenu.png" alt="burgermeny" />
+          </button>
+        </div>
+
+        <div class="logo">
+          <a href="Index.html"
+            ><img src="/Assets/Header logo.png" alt="logo"
+          /></a>
+        </div>
+
+        <div class="nav-icons">
+          <a href="Emptylinks.html"
+            ><img class="profile" src="/Assets/ikoner/Person.png" alt="Profil"
+          /></a>
+          <a href="order.html"
+            ><img class="cart" src="/Assets/ikoner/cart.png" alt="Handlevogn"
+          /></a>
+        </div>
+      </nav>
+
+      <div class="overlay-content">
+        <div class="overlay-content-buttons">
+          <a href="Index.html"
+            ><button class="overlay-home-btn">Hjem</button></a
+          >
+          <a href="Menu.html"><button class="overlay-menu-btn">Meny</button></a>
+          <a href="order.html"
+            ><button class="overlay-order-btn">Bestilling</button></a
+          >
+        </div>
+      </div>
+
+      <!-- Navigation menu for coffee -->
+
+      <nav class="meny-nav" aria-label="Kaffe kategorier">
+        <a href="#japansk-inspirerte-drikker">Japansk</a>
+        <a href="#nordisk-inspirerte-drikker">Nordisk</a>
+        <a href="#varme-drikker">Varme</a>
+        <a href="#kalde-drikker">Kalde</a>
+      </nav>
+    </header>
+
+    <main id="menu"></main>
+
+    <footer>
+      <section class="footer-align">
+        <a href="Index.html"
+          ><img src="/Assets/ikoner/Logo.png" alt="logo-kohimame" ;
+        /></a>
+
+        <div class="footer-lists">
+          <ul>
+            <li>
+              <a href="Emptylinks.html"><strong>Om oss</strong></a>
+            </li>
+            <li><a href="Emptylinks.html">lokasjon</a></li>
+            <li><a href="Emptylinks.html">Om oss</a></li>
+            <li><a href="Emptylinks.html">Vår historie</a></li>
+          </ul>
+
+          <ul>
+            <li>
+              <a href="Emptylinks.html"><strong>Informasjon</strong></a>
+            </li>
+            <li><a href="Emptylinks.html">ledige stillinger</a></li>
+            <li>
+              <a href="Emptylinks.html">Cookie og personvern</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </footer>
+    <button
+      type="button"
+      class="order-bar"
+      aria-label="Se din bestilling – 138 kroner"
+    >
+      <div class="order-bar__inner">
+        <span class="order-bar__icon" aria-hidden="true">
+          <svg
+            class="cart-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-cart2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+            />
+          </svg>
+        </span>
+        <span class="order-bar__label">Se din bestilling</span>
+        <span class="order-bar__price">138 kr</span>
+      </div>
+    </button>
+
+    <script src="/js/menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,486 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* = høyden på sticky header */
+}
+
+:root {
+  --header-h: 75px;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-h);
+}
+
+/*navigasjon*/
+nav {
+  background-color: #e9e3d6;
+  width: auto;
+  padding: 10px 20px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    background-color: #e9e3d6;
+    padding: 10px 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+}
+.cart {
+  height: 30px;
+}
+.profile {
+  height: 32px;
+}
+.burgermenu {
+  height: 30px;
+}
+.profile:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+.cart:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo img {
+  height: 120px;
+}
+
+.overlay-content {
+  position: fixed;
+  border-radius: 50px;
+  top: 0;
+  left: -50px;
+  height: 100%;
+  z-index: 1000;
+  background-color: #89947b;
+  width: 400px;
+  display: none;
+}
+#overlay-btn {
+  border: none;
+  background-color: transparent;
+}
+#overlay-btn:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+
+.overlay-content-buttons {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 8px;
+  gap: 20px;
+}
+.overlay-home-btn,
+.overlay-menu-btn,
+.overlay-order-btn {
+  justify-content: center;
+  font-family: "Shippori Mincho", serif;
+  border-radius: 8px;
+  background-color: #6c7a5b;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-style: bold;
+  width: 125px;
+  height: 66px;
+}
+.overlay-home-btn:hover,
+.overlay-menu-btn:hover,
+.overlay-order-btn:hover {
+  filter: drop-shadow(2px 2px 2px);
+}
+
+header {
+  background-color: #e9e3d6;
+  border-bottom: 1px solid #cfc8b7;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body {
+  margin: 0;
+  background-color: #e9e3d6;
+  color: #3e2c23;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Montaga", serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Montaga", serif;
+  font-size: 1rem;
+}
+
+.meny-nav {
+  font-size: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-radius: 8px;
+  justify-content: center;
+  background-color: #f9eedd;
+}
+
+.meny-nav a {
+  text-decoration: none;
+  color: #2b2b2b;
+  font-size: 1rem;
+}
+
+main {
+  padding: 2rem 1rem 5rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.product-card {
+  scroll-snap-align: start; /* for horisontal scroll på små skjermer */
+  background-color: #f8eedd;
+  border: 1px solid #cfc8b7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+  /* MER LUFT */
+  padding: 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-img {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden; /* <- endret */
+  border-radius: 0; /* <- ingen avrunding her */
+  background: transparent;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.product-title {
+  font-size: clamp(1.05rem, 1vw + 0.9rem, 1.3rem);
+  line-height: 1.25;
+  margin: 0 0 0.5rem;
+}
+.product-desc {
+  font-size: clamp(0.95rem, 0.6vw + 0.85rem, 1rem);
+  line-height: 1.5;
+  min-height: 3.5em; /* "låser" høyden litt så kortene linjerer bedre */
+  margin: 0 0 1rem;
+}
+.price {
+  font-size: clamp(1.05rem, 0.8vw + 0.9rem, 1.2rem);
+}
+
+/* Pris + CTA rad */
+.product-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #cfc8b7;
+  padding-top: 1rem;
+  margin-top: auto; /* skyver footer til bunn av kortet */
+  gap: 1rem;
+}
+
+.add-btn {
+  font-size: clamp(1rem, 0.7vw + 0.85rem, 1.1rem);
+  background-color: #3b2a1e;
+  color: #f5f2ec;
+  padding: 0.6rem 1rem;
+  border: 0;
+  border-radius: 8px;
+}
+
+.add-btn:hover {
+  background-color: #6b4f3d;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* “Stepper” som erstatter “Legg til” etter første klikk */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #efe9d7;
+  border: 1px solid #cfc8b7;
+  border-radius: 999px;
+  padding: 4px;
+}
+.stepper__btn {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f8f6f1;
+  cursor: pointer;
+}
+.stepper__btn:focus-visible {
+  outline: 2px solid rgba(26, 46, 138, 0.45);
+  outline-offset: 2px;
+}
+.stepper__qty {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Flytende hjerte – litt inntrekk fra kanten */
+.fav-btn {
+  position: absolute;
+  top: 12px; /* litt mer luft */
+  right: 12px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* SVG: unngå klipp av stroke */
+.fav-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  overflow: visible; /* <- gjør at stroke ikke kuttes */
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: #b23333;
+  transition: fill 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.fav-btn:hover svg,
+.fav-btn:focus-visible svg,
+.fav-btn.is-fav svg {
+  color: #b23333;
+  fill: currentColor;
+}
+footer {
+  background-color: #f5f2ec;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  footer {
+    background-color: #f5f2ec;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer-align {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-lists {
+  display: flex;
+  gap: 20px;
+}
+
+footer li {
+  list-style: none;
+  font-family: "Montaga", serif;
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  footer li {
+    list-style: none;
+    font-family: "Montaga", serif;
+    font-size: 16px;
+  }
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Knappen – midtstilt nederst */
+.order-bar {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(16px + env(safe-area-inset-bottom, 0));
+  z-index: 1050;
+
+  width: min(92vw, 680px);
+  background: #6a755c; /* olivengrønn */
+  color: #ffffff;
+  border: 0;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.order-bar__inner {
+  display: grid;
+  grid-template-columns: 28px 1fr max-content; /* ikon | label | pris */
+  align-items: center;
+  column-gap: 16px;
+  padding: 12px 18px;
+}
+
+.order-bar__icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.order-bar__label {
+  text-align: center;
+  font-size: clamp(1rem, 1.2vw + 0.85rem, 1rem);
+}
+
+.order-bar__price {
+  font-size: clamp(1rem, 0.9vw + 0.85rem, 1rem);
+  white-space: nowrap;
+}
+
+.order-bar:hover {
+  filter: brightness(1.02);
+}
+.order-bar:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 3px;
+}
+.order-bar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Små skjermer – litt tettere spacing */
+@media (max-width: 380px) {
+  .order-bar__inner {
+    column-gap: 12px;
+    padding: 10px 14px;
+  }
+  .order-bar__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Små skjermer: litt tettere gap på top-nav*/
+@media (max-width: 420px) {
+  .icon-container {
+    gap: 10px;
+  }
+}
+
+/* Små skjermer: horisontal scroll i stedet for å blåse opp kortene */
+@media (max-width: 720px) {
+  .product-grid {
+    display: grid;
+    grid-template-columns: none; /* eller: unset; */
+    grid-auto-flow: column; /* legg kort bortover */
+    grid-auto-columns: clamp(180px, 65vw, 230px);
+    gap: 1rem;
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+  }
+}
+
+/* penere tynn scrollbar på mobil/Chrome */
+@media (max-width: 720px) {
+  .product-grid::-webkit-scrollbar {
+    height: 8px;
+  }
+  .product-grid::-webkit-scrollbar-thumb {
+    background: #cfc8b7;
+    border-radius: 8px;
+  }
+  .product-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

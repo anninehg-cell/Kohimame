@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*navigasjon*/
+nav {
+  background-color: #e9e3d6;
+  width: auto;
+  padding: 10px 20px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    background-color: #e9e3d6;
+    padding: 10px 20px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+}
+.cart {
+  height: 30px;
+}
+.profile {
+  height: 32px;
+}
+.burgermenu {
+  height: 30px;
+}
+.profile:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+.cart:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo img {
+  height: 120px;
+}
+
+/*For å få til overlayet er det brukt en guide fra https://www.w3schools.com/howto/howto_css_modals.asp? som utgangspunkt*/
+.overlay-content {
+  position: fixed;
+  border-radius: 50px;
+  top: 0;
+  left: -50px;
+  height: 100%;
+  z-index: 1000;
+  background-color: #89947b;
+  width: 400px;
+  display: none;
+}
+#overlay-btn {
+  border: none;
+  background-color: transparent;
+}
+#overlay-btn:hover {
+  filter: drop-shadow(1px 1px 1px);
+}
+
+.overlay-content-buttons {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 8px;
+  gap: 20px;
+}
+.overlay-home-btn,
+.overlay-menu-btn,
+.overlay-order-btn {
+  justify-content: center;
+  font-family: "Shippori Mincho", serif;
+  border-radius: 8px;
+  background-color: #6c7a5b;
+  border-radius: 12px;
+  color: white;
+  font-size: 24px;
+  font-style: bold;
+  width: 125px;
+  height: 66px;
+}
+.overlay-home-btn:hover,
+.overlay-menu-btn:hover,
+.overlay-order-btn:hover {
+  filter: drop-shadow(2px 2px 2px);
+}
+
+main {
+  background-color: #e9e3d6;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2rem 5%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 3em;
+}
+
+p {
+  font-family: "Montaga", serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.375em;
+  word-break: keep-all;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.thanks-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.thanks-txt {
+  color: #767575;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.thanks-txt2 {
+  padding-top: 1.5rem;
+}
+
+footer {
+  background-color: #f5f2ec;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  footer {
+    background-color: #f5f2ec;
+    padding-left: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer-align {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-lists {
+  display: flex;
+  gap: 20px;
+}
+
+footer li {
+  list-style: none;
+  font-family: "Montaga", serif;
+  font-size: 20px;
+}
+@media (max-width: 600px) {
+  footer li {
+    list-style: none;
+    font-family: "Montaga", serif;
+    font-size: 16px;
+  }
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  overflow: clip;
+}
+
+#group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+  gap: 20px;
+}
+
+.member {
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.member p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bean-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1.375em;
+  }
+  #group {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .member {
+    width: 90%;
+  }
+  .bean-container img {
+    max-width: 40vw;
+  }
+  footer {
+    padding: 20px;
+    height: auto;
+  }
+}
